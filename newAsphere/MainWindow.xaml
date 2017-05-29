@@ -1,0 +1,128 @@
+﻿<Window x:Class="newAsphere.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:newAsphere"
+        mc:Ignorable="d"
+        Title="Parameter Entry" Height="411" Width="672" ResizeMode="NoResize">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FF1E1EE4" Offset="0"/>
+            <GradientStop Color="#FF8E8EE7" Offset="0.867"/>
+        </LinearGradientBrush>
+    </Window.Background>
+    <Window.Effect>
+        <DropShadowEffect Opacity="0.3" Color="#FF010734"/>
+    </Window.Effect>
+    <Window.Resources>
+        <Style x:Key="basicLabel" TargetType="Label">
+            <Setter Property="Foreground" Value="#CCFEFEFE" />
+            <Setter Property="FontFamily" Value="Segoe UI Semibold" />
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="HorizontalContentAlignment" Value="Right"/>
+            <Setter Property="Width" Value="60"/>
+            <Setter Property="Height" Value="20"/>
+            <Setter Property="VerticalAlignment" Value="top"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="Padding" Value="3" />
+        </Style>
+        <Style x:Key="basicTextBox" TargetType="TextBox">
+            <Setter Property="Foreground" Value="#FF000000"/>
+            <Setter Property="FontFamily" Value="Segoe UI Semilight"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="Height" Value="20"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="Width" Value="100"/>
+            <Setter Property="Height" Value="22"/>
+            <Setter Property="TextWrapping" Value="NoWrap"/>
+            <Setter Property="Text" Value="Text Box"/>
+            <Style.Triggers>
+                <Trigger Property="IsFocused" Value="True">
+                    <Setter Property="Background" Value="DarkBlue" />
+                    <Setter Property="Foreground" Value="Yellow" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Label Content="Asphere Calculator" HorizontalAlignment="Center" Margin="185,10,153.4,0" VerticalAlignment="Top" Foreground="#FFCECECE" FontFamily="Segoe UI Black" FontSize="18" Width="180"/>
+        <Label Content="Coefficients" HorizontalAlignment="Left" Margin="325,42,0,0" VerticalAlignment="Top" Foreground="#FFCECECE" FontSize="14"/>
+        <Label Content="General" HorizontalAlignment="Left" Margin="100,42,0,0" VerticalAlignment="Top" Foreground="#FFCECECE" FontSize="14"/>
+        <Label Content="Radius" Style="{StaticResource basicLabel}" Margin="10,75,0,0" />
+        <Label Content="Diameter" Style="{StaticResource basicLabel}" Margin="10,100,0,0" />
+        <Label Content="Conic" Style="{StaticResource basicLabel}" Margin="10,125,0,0" />
+        <TextBox x:Name="txtRadius" HorizontalAlignment="Left" Height="23" Margin="100,79,0,0" Style="{StaticResource basicTextBox}" Tag="Enter vertex radius" />
+        <TextBox x:Name="txtDiameter" HorizontalAlignment="Left" Height="23" Margin="100,105,0,0" Style="{StaticResource basicTextBox}" LostFocus="txtDiameter_LostFocus"/>
+        <TextBox x:Name="txtConic" HorizontalAlignment="Left" Height="23" Margin="100,133,0,0" Style="{StaticResource basicTextBox}"/>
+        <StackPanel>
+            <RadioButton x:Name="radEven" GroupName="asphereType" Content="Even" HorizontalAlignment="Left" Margin="100,192,0,0" VerticalAlignment="Top" Foreground="#FFCECECE" Width="60" IsChecked="True" />
+            <RadioButton x:Name="radFull" GroupName="asphereType" Content="Full" HorizontalAlignment="Left" Margin="100,5,0,0" VerticalAlignment="Top" Foreground="#FFCECECE" Width="60" Checked="radFull_Checked"/>
+
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="235,75,0,0" Name="coefficients" HorizontalAlignment="Left" Width="280" Height="261" VerticalAlignment="Top">
+            <StackPanel Orientation="Vertical" >
+                <Label x:Name="lblA1" Content="A1" Style="{StaticResource basicLabel}" Width="35"/>
+                <Label x:Name="lblA3" Content="A3" Style="{StaticResource basicLabel}" Width="35" Margin="0,5,0,0"/>
+                <Label x:Name="lblA5" Content="A5" Style="{StaticResource basicLabel}" Width="35" Margin="0,5,0,0"/>
+                <Label x:Name="lblA7" Content="A7" Style="{StaticResource basicLabel}" Width="35" Margin="0,5,0,0"/>
+                <Label x:Name="lblA9" Content="A9" Style="{StaticResource basicLabel}" Width="35" Margin="0,5,0,0"/>
+                <Label x:Name="lblA11" Content="A11" Style="{StaticResource basicLabel}" Width="35" Margin="0,5,0,0"/>
+                <Label x:Name="lblA13" Content="A13" Style="{StaticResource basicLabel}" Width="35" Margin="0,5,0,0"/>
+                <Label x:Name="lblA15" Content="A15" Style="{StaticResource basicLabel}" Width="35" Margin="0,5,0,0"/>
+                <Label x:Name="lblA17" Content="A17" Style="{StaticResource basicLabel}" Width="35" Margin="0,5,0,0"/>
+                <Label x:Name="lblA19" Content="A19" Style="{StaticResource basicLabel}" Width="35" Margin="0,5,0,0"/>
+            </StackPanel>
+            <StackPanel x:Name="oddCoefficientStack" Orientation="Vertical" >
+                <TextBox x:Name="txtA1" Style="{StaticResource basicTextBox}" Margin="0,0,0,0"/>
+                <TextBox x:Name="txtA3" Style="{StaticResource basicTextBox}" Margin="0,5,0,0"/>
+                <TextBox x:Name="txtA5" Style="{StaticResource basicTextBox}" Margin="0,3,0,0"/>
+                <TextBox x:Name="txtA7" Style="{StaticResource basicTextBox}" Margin="0,3,0,0"/>
+                <TextBox x:Name="txtA9" Style="{StaticResource basicTextBox}" Margin="0,3,0,0"/>
+                <TextBox x:Name="txtA11" Style="{StaticResource basicTextBox}" Margin="0,3,0,0"/>
+                <TextBox x:Name="txtA13" Style="{StaticResource basicTextBox}" Margin="0,3,0,0"/>
+                <TextBox x:Name="txtA15" Style="{StaticResource basicTextBox}" Margin="0,3,0,0"/>
+                <TextBox x:Name="txtA17" Style="{StaticResource basicTextBox}" Margin="0,3,0,0"/>
+                <TextBox x:Name="txtA19" Style="{StaticResource basicTextBox}" Margin="0,3,0,0"/>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" >
+                <Label x:Name="lblA2" Content="A2" Style="{StaticResource basicLabel}" Width="35" />
+                <Label x:Name="lblA4" Content="A4" Style="{StaticResource basicLabel}" Width="35"  Margin="0,5,0,0"/>
+                <Label x:Name="lblA6" Content="A6" Style="{StaticResource basicLabel}" Width="35"  Margin="0,5,0,0"/>
+                <Label x:Name="lblA8" Content="A8" Style="{StaticResource basicLabel}" Width="35"  Margin="0,5,0,0"/>
+                <Label x:Name="lblA10" Content="A10" Style="{StaticResource basicLabel}" Width="35"  Margin="0,5,0,0"/>
+                <Label x:Name="lblA12" Content="A12" Style="{StaticResource basicLabel}" Width="35"  Margin="0,5,0,0"/>
+                <Label x:Name="lblA14" Content="A14" Style="{StaticResource basicLabel}" Width="35" Margin="0,5,0,0" />
+                <Label x:Name="lblA16" Content="A16" Style="{StaticResource basicLabel}" Width="35"  Margin="0,5,0,0"/>
+                <Label x:Name="lblA18" Content="A18" Style="{StaticResource basicLabel}" Width="35"  Margin="0,5,0,0"/>
+                <Label x:Name="lblA20" Content="A20" Style="{StaticResource basicLabel}" Width="35"  Margin="0,5,0,0"/>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" >
+                <TextBox x:Name="txtA2" Style="{StaticResource basicTextBox}" Margin="0,0,0,0"/>
+                <TextBox x:Name="txtA4" Style="{StaticResource basicTextBox}" Margin="0,3,0,0"/>
+                <TextBox x:Name="txtA6" Style="{StaticResource basicTextBox}" Margin="0,3,0,0"/>
+                <TextBox x:Name="txtA8" Style="{StaticResource basicTextBox}" Margin="0,3,0,0"/>
+                <TextBox x:Name="txtA10" Style="{StaticResource basicTextBox}" Margin="0,3,0,0"/>
+                <TextBox x:Name="txtA12" Style="{StaticResource basicTextBox}" Margin="0,3,0,0"/>
+                <TextBox x:Name="txtA14" Style="{StaticResource basicTextBox}" Margin="0,3,0,0"/>
+                <TextBox x:Name="txtA16" Style="{StaticResource basicTextBox}" Margin="0,3,0,0"/>
+                <TextBox x:Name="txtA18" Style="{StaticResource basicTextBox}" Margin="0,3,0,0"/>
+                <TextBox x:Name="txtA20" Style="{StaticResource basicTextBox}" Margin="0,3,0,0"/>
+            </StackPanel>
+        </StackPanel>
+        <Label Content="Sag Table" HorizontalAlignment="Left" Margin="552,42,0,0" VerticalAlignment="Top" Foreground="#FFCECECE" FontSize="14"/>
+        <Label Content="Start:" Style="{StaticResource basicLabel}" Margin="0,79,86.6,0" HorizontalAlignment="Right"/>
+        <Label Content="End:" Style="{StaticResource basicLabel}" Margin="0,106,86.6,0" HorizontalAlignment="Right"/>
+        <Label Content="Step:" Style="{StaticResource basicLabel}" Margin="0,131,86.6,0" HorizontalAlignment="Right"/>
+        <TextBox x:Name="startValue" Style="{StaticResource basicTextBox}" Margin="584,79,0,0" Width="50" />
+        <TextBox x:Name="endValue" Style="{StaticResource ResourceKey=basicTextBox}" Margin="584,106,0,0" Width="50" />
+        <TextBox x:Name="stepValue" Style="{StaticResource ResourceKey=basicTextBox}" Margin="584,133,0,0" Width="50" />
+        <Label Content="Type" HorizontalAlignment="Left" Margin="32,193,0,0" VerticalAlignment="Top" Foreground="#FFCECECE" HorizontalContentAlignment="Right" Width="62"/>
+        <Button x:Name="btnSwapCoefficients" Content="+/-" HorizontalAlignment="Left" Margin="95,252,0,0" VerticalAlignment="Top" Width="75" BorderThickness="1" Opacity="0.8" Height="20"/>
+        <Button x:Name="btnCalculate" Content="Calculate" HorizontalAlignment="Left" Margin="95,276,0,0" VerticalAlignment="Top" Width="75" Height="20" Click="btnCalculate_Click" IsDefault="True"/>
+        <Button x:Name="btnClose" Content="Close" HorizontalAlignment="Left" Margin="10,346,0,0" VerticalAlignment="Top" Width="85" Height="26" Click="btnClose_Click"/>
+
+    </Grid>
+</Window>

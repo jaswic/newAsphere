@@ -1,0 +1,16 @@
+C:\Users\jason\documents\visual studio 2017\Projects\newAsphere\newAsphere\obj\Debug\MainWindow.g.cs
+C:\Users\jason\documents\visual studio 2017\Projects\newAsphere\newAsphere\obj\Debug\App.g.cs
+C:\Users\jason\documents\visual studio 2017\Projects\newAsphere\newAsphere\obj\Debug\newAsphere_MarkupCompile.cache
+C:\Users\jason\documents\visual studio 2017\Projects\newAsphere\newAsphere\obj\Debug\newAsphere_MarkupCompile.lref
+C:\Users\jason\documents\visual studio 2017\Projects\newAsphere\newAsphere\obj\Debug\newAsphere.csprojResolveAssemblyReference.cache
+C:\Users\jason\documents\visual studio 2017\Projects\newAsphere\newAsphere\bin\Debug\newAsphere.exe.config
+C:\Users\jason\documents\visual studio 2017\Projects\newAsphere\newAsphere\bin\Debug\newAsphere.exe
+C:\Users\jason\documents\visual studio 2017\Projects\newAsphere\newAsphere\bin\Debug\newAsphere.pdb
+C:\Users\jason\documents\visual studio 2017\Projects\newAsphere\newAsphere\obj\Debug\MainWindow.baml
+C:\Users\jason\documents\visual studio 2017\Projects\newAsphere\newAsphere\obj\Debug\newAsphere.g.resources
+C:\Users\jason\documents\visual studio 2017\Projects\newAsphere\newAsphere\obj\Debug\newAsphere.Properties.Resources.resources
+C:\Users\jason\documents\visual studio 2017\Projects\newAsphere\newAsphere\obj\Debug\newAsphere.csproj.GenerateResource.Cache
+C:\Users\jason\documents\visual studio 2017\Projects\newAsphere\newAsphere\obj\Debug\newAsphere.exe
+C:\Users\jason\documents\visual studio 2017\Projects\newAsphere\newAsphere\obj\Debug\newAsphere.pdb
+C:\Users\jason\documents\visual studio 2017\Projects\newAsphere\newAsphere\obj\Debug\resultWindow.g.cs
+C:\Users\jason\documents\visual studio 2017\Projects\newAsphere\newAsphere\obj\Debug\resultWindow.baml

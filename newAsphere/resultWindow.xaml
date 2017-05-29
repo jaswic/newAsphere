@@ -1,0 +1,47 @@
+﻿<Window x:Class="newAsphere.ResultWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:newAsphere"
+        mc:Ignorable="d"
+        Title="Lens Results" Height="400" Width="450">
+    <Window.Resources>
+        <Style x:Key="resultLabel" TargetType="Label">
+            <Setter Property="ContentStringFormat" Value="%5.3f"/>
+            <Setter Property="BorderBrush" Value="Gray"/>
+            <Setter Property="Background"   Value="#7FE6E6E6" />
+        </Style>
+        <Style x:Key="titleProperties" TargetType="Label">
+            <Setter Property="Foreground" Value="#FF65659A"/>
+            <Setter Property="FontFamily" Value="Segoe UI Black"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+        </Style>
+        <Style x:Name="sagTablePositionStyle" TargetType="TextBox">
+            <Setter Property="Width" Value="50"/>
+            <Setter Property="Margin" Value="0,5,5,0"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <StackPanel Width="200" HorizontalAlignment="Left">
+            <Label Content="Characteristics" Style="{StaticResource titleProperties}" />
+            <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                <Label Content="Best Fit Sphere:" HorizontalContentAlignment="Right" VerticalAlignment="Top" Width="132"/>
+                <Label x:Name="txtBFS" Style="{StaticResource resultLabel}" Width="50" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                <Label Content="MaximumTool Radius:" HorizontalContentAlignment="right" Width="132"/>
+                <Label x:Name="txtMaxToolRadius" Content="Label" Style="{StaticResource resultLabel}" Width="50"/>
+            </StackPanel>
+        </StackPanel>
+        <ScrollViewer Name="sagScrollViewer" VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Disabled"
+                      Height="325" VerticalAlignment="Top">
+            <StackPanel Width="200" HorizontalAlignment="Right" Name="sagTableStackPanel" CanVerticallyScroll="True" >
+                <Label Content="Sag Table" Style="{StaticResource titleProperties}"/>
+             </StackPanel>      
+        </ScrollViewer>
+        <Button x:Name="btnCLose" Content="Close" Height="19" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,0,0,10" Width="75" IsDefault="True" Click="btnClose_Click"/>
+ </Grid>
+
+</Window>
